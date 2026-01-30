@@ -1,17 +1,15 @@
-"use client"
-
-import React from "react"
-import { IconCheck, IconClipboardTextFilled } from "@tabler/icons-react"
+import React from "react";
+import { IconCheck, IconClipboardTextFilled } from "@tabler/icons-react";
 
 import {
   getCopyableCssVariablesV3,
   getCopyableCssVariablesV4,
-} from "@/lib/utils"
+} from "@/lib/utils";
 import {
   useGeneratedColorsV3,
   useGeneratedColorsV4,
-} from "@/hooks/use-generated-colors"
-import { Button } from "@/components/ui/button"
+} from "@/hooks/use-generated-colors";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -19,31 +17,31 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { ScrollArea } from "@/components/ui/scroll-area"
+} from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/components/ui/tooltip";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 
 export default function CopyButton() {
-  const [isCopied, setIsCopied] = React.useState(false)
-  const [themeVersion, setThemeVersion] = React.useState<"v3" | "v4">("v4")
-  const colorsV3 = useGeneratedColorsV3()
-  const colorsV4 = useGeneratedColorsV4()
+  const [isCopied, setIsCopied] = React.useState(false);
+  const [themeVersion, setThemeVersion] = React.useState<"v3" | "v4">("v4");
+  const colorsV3 = useGeneratedColorsV3();
+  const colorsV4 = useGeneratedColorsV4();
 
   function onCopy() {
-    setIsCopied(true)
-    setTimeout(() => setIsCopied(false), 2000)
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
 
     navigator.clipboard.writeText(
       themeVersion === "v3"
         ? getCopyableCssVariablesV3(colorsV3)
-        : getCopyableCssVariablesV4(colorsV4)
-    )
+        : getCopyableCssVariablesV4(colorsV4),
+    );
   }
 
   return (
@@ -53,7 +51,7 @@ export default function CopyButton() {
           <DialogTrigger asChild>
             <Button
               size="icon"
-              className="size-9 md:size-12 rounded-full"
+              className="size-9 rounded-full md:size-12"
               variant="ghost"
             >
               <IconClipboardTextFilled className="size-6" />
@@ -73,7 +71,7 @@ export default function CopyButton() {
           </DialogDescription>
         </DialogHeader>
         <Tabs onValueChange={(value: any) => setThemeVersion(value)}>
-          <div className="flex items-center justify-between mb-2">
+          <div className="mb-2 flex items-center justify-between">
             <TabsList>
               <TabsTrigger value="v4">Tailwind v4</TabsTrigger>
               <TabsTrigger value="v3">Tailwind v3</TabsTrigger>
@@ -89,15 +87,15 @@ export default function CopyButton() {
             </Button>
           </div>
           <TabsContent value="v3">
-            <div className="bg-card rounded-lg border max-h-[50vh] relative overflow-auto max-w-[calc(100vw-5rem)]">
-              <pre className="text-sm p-4 leading-normal">
+            <div className="bg-card relative max-h-[50vh] max-w-[calc(100vw-5rem)] overflow-auto rounded-lg border">
+              <pre className="p-4 text-sm leading-normal">
                 {getCopyableCssVariablesV3(colorsV3)}
               </pre>
             </div>
           </TabsContent>
           <TabsContent value="v4">
-            <div className="bg-card rounded-lg border max-h-[50vh] relative overflow-auto max-w-[calc(100vw-5rem)]">
-              <pre className="text-sm p-4 leading-normal">
+            <div className="bg-card relative max-h-[50vh] max-w-[calc(100vw-5rem)] overflow-auto rounded-lg border">
+              <pre className="p-4 text-sm leading-normal">
                 {getCopyableCssVariablesV4(colorsV4)}
               </pre>
             </div>
@@ -105,5 +103,5 @@ export default function CopyButton() {
         </Tabs>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

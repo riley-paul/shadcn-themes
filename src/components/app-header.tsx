@@ -1,19 +1,17 @@
-import React from "react"
-import Link from "next/link"
-import { BsGithub, BsTwitterX } from "react-icons/bs"
+import { BsGithub, BsTwitterX } from "react-icons/bs";
 
-import { ThemeToggler } from "./theme-toggler"
-import { Button } from "./ui/button"
+import { ThemeToggler } from "./theme-toggler";
+import { Button } from "./ui/button";
 
 export default function Appheader() {
   return (
-    <div className="fixed top-0 inset-x-0 z-50 bg-background/80 backdrop-blur-sm border-b">
+    <div className="bg-background/80 fixed inset-x-0 top-0 z-50 border-b backdrop-blur-sm">
       <div className="container flex items-center justify-between py-2">
-        <Link href="/" className="font-bold">
+        <a href="/" className="font-bold">
           Shadcn UI Themes
-        </Link>
+        </a>
 
-        <div className="flex items-center gap-0.5 -mr-2">
+        <div className="-mr-2 flex items-center gap-0.5">
           <Button asChild variant="ghost" size="icon">
             <a
               href="https://github.com/mfrkankaya/shadcn-themes"
@@ -31,5 +29,5 @@ export default function Appheader() {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,10 +1,8 @@
-"use client"
+import * as React from "react";
+import { MinusIcon, PlusIcon } from "@radix-ui/react-icons";
+import { Bar, BarChart, ResponsiveContainer } from "recharts";
 
-import * as React from "react"
-import { MinusIcon, PlusIcon } from "@radix-ui/react-icons"
-import { Bar, BarChart, ResponsiveContainer } from "recharts"
-
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -12,7 +10,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 
 const data = [
   {
@@ -54,17 +52,17 @@ const data = [
   {
     goal: 349,
   },
-]
+];
 
 export function CardsActivityGoal() {
-  const [goal, setGoal] = React.useState(350)
+  const [goal, setGoal] = React.useState(350);
 
   function onClick(adjustment: number) {
-    setGoal(Math.max(200, Math.min(400, goal + adjustment)))
+    setGoal(Math.max(200, Math.min(400, goal + adjustment)));
   }
 
   return (
-    <Card className="flex-1 h-fit">
+    <Card className="h-fit flex-1">
       <CardHeader className="pb-4">
         <CardTitle>Move Goal</CardTitle>
         <CardDescription>Set your daily activity goal.</CardDescription>
@@ -83,7 +81,7 @@ export function CardsActivityGoal() {
           </Button>
           <div className="flex-1 text-center">
             <div className="text-5xl font-bold tracking-tighter">{goal}</div>
-            <div className="text-[0.70rem] uppercase text-muted-foreground">
+            <div className="text-muted-foreground text-[0.70rem] uppercase">
               Calories/day
             </div>
           </div>
@@ -110,8 +108,10 @@ export function CardsActivityGoal() {
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full" variant="secondary">Set Goal</Button>
+        <Button className="w-full" variant="secondary">
+          Set Goal
+        </Button>
       </CardFooter>
     </Card>
-  )
+  );
 }

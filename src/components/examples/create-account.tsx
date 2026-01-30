@@ -1,8 +1,6 @@
-"use client"
+import { BsGithub, BsGoogle } from "react-icons/bs";
 
-import { BsGithub, BsGoogle } from "react-icons/bs"
-
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -10,9 +8,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export function CardsCreateAccount() {
   return (
@@ -39,7 +37,7 @@ export function CardsCreateAccount() {
             <span className="w-full border-t" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-card px-2 text-muted-foreground">
+            <span className="bg-card text-muted-foreground px-2">
               Or continue with
             </span>
           </div>
@@ -57,5 +55,5 @@ export function CardsCreateAccount() {
         <Button className="w-full">Create account</Button>
       </CardFooter>
     </Card>
-  )
+  );
 }

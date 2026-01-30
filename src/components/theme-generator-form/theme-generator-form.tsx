@@ -1,31 +1,29 @@
-"use client"
+import React from "react";
+import { useTheme } from "next-themes";
 
-import React from "react"
-import { useTheme } from "next-themes"
+import { useColorStore, useColorStoreSetter } from "@/store/color-store";
+import CopyButton from "@/components/copy-button";
+import BgStyleSelect from "@/components/theme-generator-form/bg-style-select";
+import CardStyleSelect from "@/components/theme-generator-form/card-style-select";
+import RadiusSelect from "@/components/theme-generator-form/radius-select";
 
-import { useColorStore, useColorStoreSetter } from "@/store/color-store"
-import CopyButton from "@/components/copy-button"
-import BgStyleSelect from "@/components/theme-generator-form/bg-style-select"
-import CardStyleSelect from "@/components/theme-generator-form/card-style-select"
-import RadiusSelect from "@/components/theme-generator-form/radius-select"
-
-import { ColorPicker } from "./color-picker"
+import { ColorPicker } from "./color-picker";
 
 export default function ThemeGeneratorForm() {
-  const setFieldStore = useColorStoreSetter()
-  const lightColor = useColorStore((state) => state.light.color)
-  const darkColor = useColorStore((state) => state.dark.color)
-  const { resolvedTheme, setTheme } = useTheme()
+  const setFieldStore = useColorStoreSetter();
+  const lightColor = useColorStore((state) => state.light.color);
+  const darkColor = useColorStore((state) => state.dark.color);
+  const { resolvedTheme, setTheme } = useTheme();
 
   return (
-    <div className="rounded-full p-1 md:p-2 flex w-fit max-w-lg bg-card/80 backdrop-blur-md border mx-auto items-center divide-x shadow-lg">
-      <div className="flex gap-1 md:gap-2 pr-3 md:pr-4">
+    <div className="bg-card/80 mx-auto flex w-fit max-w-lg items-center divide-x rounded-full border p-1 shadow-lg backdrop-blur-md md:p-2">
+      <div className="flex gap-1 pr-3 md:gap-2 md:pr-4">
         <ColorPicker
           title="Light Color"
           value={lightColor}
           onChange={(v) => {
-            if (resolvedTheme !== "light") setTheme("light")
-            setFieldStore("light.color", v)
+            if (resolvedTheme !== "light") setTheme("light");
+            setFieldStore("light.color", v);
           }}
         />
 
@@ -33,8 +31,8 @@ export default function ThemeGeneratorForm() {
           title="Dark Color"
           value={darkColor}
           onChange={(v) => {
-            if (resolvedTheme !== "dark") setTheme("dark")
-            setFieldStore("dark.color", v)
+            if (resolvedTheme !== "dark") setTheme("dark");
+            setFieldStore("dark.color", v);
           }}
         />
       </div>
@@ -51,5 +49,5 @@ export default function ThemeGeneratorForm() {
         <CopyButton />
       </div>
     </div>
-  )
+  );
 }

@@ -3,7 +3,7 @@ import { create } from "zustand"
 import { persist } from "zustand/middleware"
 import { immer } from "zustand/middleware/immer"
 
-import { GetPathValueType, Leaves } from "@/types/helpers"
+import type { GetPathValueType, Leaves } from "@/types/helpers"
 
 export type ColorStore = {
   light: {

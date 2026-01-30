@@ -1,27 +1,25 @@
-"use client"
-
-import React from "react"
+import React from "react";
 
 interface Props {
-  title: string
-  value: string
-  onChange: (value: string) => void
+  title: string;
+  value: string;
+  onChange: (value: string) => void;
 }
 
-export function ColorPicker({ title, value, onChange }: Props) {
+export function ColorPicker({ value, onChange }: Props) {
   return (
     <label
-      className="block size-9 md:size-12 rounded-full cursor-pointer overflow-hidden border"
+      className="block size-9 cursor-pointer overflow-hidden rounded-full border md:size-12"
       style={{ backgroundColor: value }}
     >
       <input
         type="color"
-        className="opacity-0 cursor-pointer"
+        className="cursor-pointer opacity-0"
         value={value}
         onChange={(e) => {
-          onChange(e.target.value)
+          onChange(e.target.value);
         }}
       />
     </label>
-  )
+  );
 }

@@ -1,42 +1,40 @@
-"use client"
+import React from "react";
+import { SelectTrigger } from "@radix-ui/react-select";
+import { IconBorderRadius } from "@tabler/icons-react";
+import { useTheme } from "next-themes";
 
-import React from "react"
-import { SelectTrigger } from "@radix-ui/react-select"
-import { IconBorderRadius } from "@tabler/icons-react"
-import { useTheme } from "next-themes"
-
-import { useColorStore } from "@/store/color-store"
-import { useMounted } from "@/hooks/use-mounted"
+import { useColorStore } from "@/store/color-store";
+import { useMounted } from "@/hooks/use-mounted";
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
   SelectLabel,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 
 export default function RadiusSelect() {
-  const { resolvedTheme } = useTheme()
-  const mounted = useMounted()
-  const radiusLight = useColorStore((state) => state.light.radius)
-  const radiusDark = useColorStore((state) => state.dark.radius)
-  const setFieldStore = useColorStore((state) => state.setField)
+  const { resolvedTheme } = useTheme();
+  const mounted = useMounted();
+  const radiusLight = useColorStore((state) => state.light.radius);
+  const radiusDark = useColorStore((state) => state.dark.radius);
+  const setFieldStore = useColorStore((state) => state.setField);
   const value = !mounted
     ? "0.635rem"
     : resolvedTheme === "light"
       ? radiusLight
-      : radiusDark
+      : radiusDark;
 
   function onValueChange(newValue: string) {
     setFieldStore(
       resolvedTheme === "light" ? "light.radius" : "dark.radius",
-      newValue
-    )
+      newValue,
+    );
   }
 
   return (
     <Select value={value ?? "0.625rem"} onValueChange={onValueChange}>
-      <SelectTrigger className="h-9 md:h-12 flex items-center gap-2 cursor-pointer text-sm">
+      <SelectTrigger className="flex h-9 cursor-pointer items-center gap-2 text-sm md:h-12">
         <IconBorderRadius />
       </SelectTrigger>
       <SelectContent>
@@ -52,5 +50,5 @@ export default function RadiusSelect() {
         </SelectGroup>
       </SelectContent>
     </Select>
-  )
+  );
 }

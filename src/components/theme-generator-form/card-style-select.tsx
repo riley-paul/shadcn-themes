@@ -1,37 +1,34 @@
-"use client"
+import { IconStack, IconStackFilled } from "@tabler/icons-react";
+import { useTheme } from "next-themes";
 
-import React from "react"
-import { IconStack, IconStackFilled } from "@tabler/icons-react"
-import { useTheme } from "next-themes"
-
-import { useColorStore } from "@/store/color-store"
-import { useMounted } from "@/hooks/use-mounted"
-import { Button } from "@/components/ui/button"
+import { useColorStore } from "@/store/color-store";
+import { useMounted } from "@/hooks/use-mounted";
+import { Button } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/components/ui/tooltip";
 
 export default function CardStyleSelect() {
-  const { resolvedTheme } = useTheme()
-  const mounted = useMounted()
+  const { resolvedTheme } = useTheme();
+  const mounted = useMounted();
   const cardLight = useColorStore(
-    (state) => state.light.isCardsAndBackgroundSameColor
-  )
+    (state) => state.light.isCardsAndBackgroundSameColor,
+  );
   const cardDark = useColorStore(
-    (state) => state.dark.isCardsAndBackgroundSameColor
-  )
-  const setFieldStore = useColorStore((state) => state.setField)
-  const value = mounted && resolvedTheme === "light" ? cardLight : cardDark
+    (state) => state.dark.isCardsAndBackgroundSameColor,
+  );
+  const setFieldStore = useColorStore((state) => state.setField);
+  const value = mounted && resolvedTheme === "light" ? cardLight : cardDark;
 
   function onValueChange() {
     setFieldStore(
       resolvedTheme === "light"
         ? "light.isCardsAndBackgroundSameColor"
         : "dark.isCardsAndBackgroundSameColor",
-      !value
-    )
+      !value,
+    );
   }
 
   return (
@@ -40,7 +37,7 @@ export default function CardStyleSelect() {
         <Button
           onClick={onValueChange}
           size="icon"
-          className="size-9 md:size-12 rounded-full"
+          className="size-9 rounded-full md:size-12"
           variant="ghost"
         >
           {!mounted ? null : value ? (
@@ -54,5 +51,5 @@ export default function CardStyleSelect() {
         <p>Card background style</p>
       </TooltipContent>
     </Tooltip>
-  )
+  );
 }
