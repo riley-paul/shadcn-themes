@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { SelectTrigger } from "@radix-ui/react-select";
 import { IconBackground } from "@tabler/icons-react";
 import { useTheme } from "next-themes";

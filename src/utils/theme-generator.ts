@@ -2,7 +2,6 @@ import Color, { type ColorInstance } from "color";
 
 import type { ColorVariables } from "@/types/colors";
 import {
-  convertAllHexToCssHslVar,
   convertAllHexToCssVar,
   convertAllHexToOklchString,
   convertCssVarToHex,

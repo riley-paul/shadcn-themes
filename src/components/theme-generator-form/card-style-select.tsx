@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { IconStack, IconStackFilled } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 

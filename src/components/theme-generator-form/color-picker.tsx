@@ -6,7 +6,7 @@ interface Props {
   onChange: (value: string) => void;
 }
 
-export function ColorPicker({ title, value, onChange }: Props) {
+export function ColorPicker({ value, onChange }: Props) {
   return (
     <label
       className="block size-9 cursor-pointer overflow-hidden rounded-full border md:size-12"

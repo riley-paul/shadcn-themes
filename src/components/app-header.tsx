@@ -1,4 +1,3 @@
-import React from "react";
 import { BsGithub, BsTwitterX } from "react-icons/bs";
 
 import { ThemeToggler } from "./theme-toggler";
