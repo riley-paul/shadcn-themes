@@ -3,12 +3,9 @@ import React from "react";
 import Appheader from "./components/app-header";
 import { ThemeSync } from "./components/theme-sync";
 import { Toaster } from "./components/ui/sonner";
-import { CardsCreateAccount } from "./components/examples/create-account";
-import { CardsActivityGoal } from "./components/examples/activity-goal";
-import { CardsTeamMembers } from "./components/examples/team-members";
-import { CardsChat } from "./components/examples/chat-demo";
 import ThemeGeneratorForm from "./components/theme-generator-form/theme-generator-form";
 import { TooltipProvider } from "./components/ui/tooltip";
+import { RootComponents } from "./components/examples/root-components";
 
 const App: React.FC = () => {
   return (
@@ -35,12 +32,7 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <CardsCreateAccount />
-            <CardsActivityGoal />
-            <CardsTeamMembers />
-            <CardsChat />
-          </div>
+          <RootComponents />
           <div className="sticky bottom-12 mt-12">
             <ThemeGeneratorForm />
           </div>
