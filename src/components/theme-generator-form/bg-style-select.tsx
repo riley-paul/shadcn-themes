@@ -1,6 +1,4 @@
-"use client";
-
-import { SelectTrigger } from "@radix-ui/react-select";
+import { Select as SelectPrimitive } from "radix-ui";
 import { IconBackground } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 
@@ -30,11 +28,11 @@ export default function BgStyleSelect() {
   }
   return (
     <Select value={value} onValueChange={onValueChange}>
-      <SelectTrigger className="flex h-9 cursor-pointer items-center gap-2 text-sm md:h-12">
+      <SelectPrimitive.Trigger className="flex h-9 cursor-pointer items-center gap-2 text-sm md:h-12">
         <IconBackground />
-      </SelectTrigger>
+      </SelectPrimitive.Trigger>
       <SelectContent>
-        {!mounted() ? null : resolvedTheme === "light" ? (
+        {resolvedTheme === "light" ? (
           <SelectItem value="white">White</SelectItem>
         ) : (
           <>

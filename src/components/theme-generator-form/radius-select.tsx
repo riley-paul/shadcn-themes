@@ -33,7 +33,6 @@ export default function RadiusSelect() {
 
   return (
     <Select
-      defaultValue={value}
       value={value ?? "0.625rem"}
       onValueChange={onValueChange}
     >

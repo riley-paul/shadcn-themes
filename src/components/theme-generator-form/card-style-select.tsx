@@ -1,5 +1,3 @@
-"use client";
-
 import { IconStack, IconStackFilled } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 
@@ -42,7 +40,7 @@ export default function CardStyleSelect() {
           className="size-9 rounded-full md:size-12"
           variant="ghost"
         >
-          {!mounted ? null : value ? (
+          {value ? (
             <IconStack className="size-6" />
           ) : (
             <IconStackFilled className="size-6" />
