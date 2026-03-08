@@ -1,5 +1,5 @@
-import { Card, CardContent } from "../ui/card"
-import { Checkbox } from "../ui/checkbox"
+import { Card, CardContent } from "../ui/card";
+import { Checkbox } from "../ui/checkbox";
 import {
   Field,
   FieldDescription,
@@ -8,7 +8,7 @@ import {
   FieldLegend,
   FieldSet,
   FieldTitle,
-} from "../ui/field"
+} from "../ui/field";
 
 const options = [
   {
@@ -28,12 +28,12 @@ const options = [
     label: "Other",
     value: "other",
   },
-]
+];
 
 export function FieldHear() {
   return (
-    <Card className="py-4 shadow-none">
-      <CardContent className="px-4">
+    <Card>
+      <CardContent>
         <form>
           <FieldGroup>
             <FieldSet className="gap-4">
@@ -68,5 +68,5 @@ export function FieldHear() {
         </form>
       </CardContent>
     </Card>
-  )
+  );
 }

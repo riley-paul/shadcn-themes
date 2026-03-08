@@ -4,7 +4,12 @@ import { useTheme } from "next-themes";
 
 import { useColorStore } from "@/store/color-store";
 import { useIsMounted } from "usehooks-ts";
-import { Select, SelectContent, SelectItem } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+} from "@/components/ui/select";
 
 export default function BgStyleSelect() {
   const { resolvedTheme } = useTheme();
@@ -32,16 +37,18 @@ export default function BgStyleSelect() {
         <IconBackground />
       </SelectPrimitive.Trigger>
       <SelectContent position="popper">
-        {resolvedTheme === "light" ? (
-          <SelectItem value="white">White</SelectItem>
-        ) : (
-          <>
-            <SelectItem value="black">Black</SelectItem>
-            <SelectItem value="gray">Gray</SelectItem>
-          </>
-        )}
-        <SelectItem value="grayish">Grayish</SelectItem>
-        <SelectItem value="slightly-saturated">Slightly Saturated</SelectItem>
+        <SelectGroup>
+          {resolvedTheme === "light" ? (
+            <SelectItem value="white">White</SelectItem>
+          ) : (
+            <>
+              <SelectItem value="black">Black</SelectItem>
+              <SelectItem value="gray">Gray</SelectItem>
+            </>
+          )}
+          <SelectItem value="grayish">Grayish</SelectItem>
+          <SelectItem value="slightly-saturated">Slightly Saturated</SelectItem>
+        </SelectGroup>
       </SelectContent>
     </Select>
   );
