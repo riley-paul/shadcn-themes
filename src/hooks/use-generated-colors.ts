@@ -1,7 +1,7 @@
 import React from "react";
 
-import { generateTheme, generateThemeV3 } from "@/utils/theme-generator";
-import { useColorStore } from "@/store/color-store";
+import { generateTheme, generateThemeV3 } from "@/lib/theme-generator";
+import { useColorStore } from "@/lib/color-store";
 
 export function useGeneratedColorsV3() {
   const lightOptions = useColorStore((state) => state.light);

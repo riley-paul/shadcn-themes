@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 
-import { useColorStore, useColorStoreSetter } from "@/store/color-store";
+import { useColorStore, useColorStoreSetter } from "@/lib/color-store";
 import CopyButton from "@/components/copy-button";
 import BgStyleSelect from "@/components/theme-generator-form/bg-style-select";
 import CardStyleSelect from "@/components/theme-generator-form/card-style-select";

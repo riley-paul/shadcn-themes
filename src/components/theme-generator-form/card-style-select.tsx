@@ -1,7 +1,7 @@
 import { IconStack, IconStackFilled } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 
-import { useColorStore } from "@/store/color-store";
+import { useColorStore } from "@/lib/color-store";
 import { useIsMounted } from "usehooks-ts";
 import { Button } from "@/components/ui/button";
 import {

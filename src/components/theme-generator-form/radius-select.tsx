@@ -2,7 +2,7 @@ import { Select as SelectPrimitive } from "radix-ui";
 import { IconBorderRadius } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 
-import { useColorStore } from "@/store/color-store";
+import { useColorStore } from "@/lib/color-store";
 import { useIsMounted } from "usehooks-ts";
 import {
   Select,

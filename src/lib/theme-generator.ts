@@ -6,7 +6,7 @@ import {
   convertAllHexToOklchString,
   convertCssVarToHex,
 } from "@/lib/utils";
-import type { DarkOptions, LightOptions } from "@/store/color-store";
+import type { DarkOptions, LightOptions } from "@/lib/color-store";
 
 function isWOBG(color: ColorInstance) {
   // White Or Black Or Gray
