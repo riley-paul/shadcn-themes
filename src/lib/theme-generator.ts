@@ -274,7 +274,7 @@ class DarkPalette {
   }
 
   getAccent() {
-    return this.getCard().saturate(8).lighten(1);
+    return this.getCard().saturate(4).lighten(2);
   }
 
   getAccentForeground() {
@@ -283,12 +283,12 @@ class DarkPalette {
 
   getBorder() {
     return this.getCard().lightness(
-      Math.min(12, this.getCard().lightness() + 8),
+      Math.min(15, this.getCard().lightness() + 8),
     );
   }
 
   getInput() {
-    return this.getBorder().lighten(0.5);
+    return this.getBorder();
   }
 
   getRing() {
