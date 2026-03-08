@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 
 export default function Appheader() {
   return (
-    <div className="bg-background/80 fixed inset-x-0 top-0 z-50 border-b backdrop-blur-sm">
+    <div className="bg-background/80 sticky inset-x-0 top-0 z-50 w-full border-b backdrop-blur-sm">
       <div className="container flex items-center justify-between py-2">
         <a href="/" className="font-bold">
           Shadcn UI Themes

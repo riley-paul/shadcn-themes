@@ -20,8 +20,8 @@ const App: React.FC = () => {
     >
       <TooltipProvider>
         <Appheader />
-        <div className="relative container pt-16 pb-32">
-          <div className="relative mt-4 mb-8 flex flex-col items-center md:mt-12 md:mb-16">
+        <div className="container pt-16 pb-32">
+          <div className="mt-4 mb-8 flex flex-col items-center md:mt-12 md:mb-16">
             <div className="mx-auto text-left sm:text-center">
               <h1 className="mx-auto mb-4 max-w-2xl text-3xl font-bold md:text-4xl lg:text-5xl">
                 Create Custom Themes for Shadcn/UI Components
