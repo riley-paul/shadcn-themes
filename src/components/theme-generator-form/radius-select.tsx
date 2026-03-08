@@ -1,6 +1,4 @@
-"use client";
-
-import { SelectTrigger } from "@radix-ui/react-select";
+import { Select as SelectPrimitive } from "radix-ui";
 import { IconBorderRadius } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 
@@ -34,10 +32,14 @@ export default function RadiusSelect() {
   }
 
   return (
-    <Select value={value ?? "0.625rem"} onValueChange={onValueChange}>
-      <SelectTrigger className="flex h-9 cursor-pointer items-center gap-2 text-sm md:h-12">
+    <Select
+      defaultValue={value}
+      value={value ?? "0.625rem"}
+      onValueChange={onValueChange}
+    >
+      <SelectPrimitive.Trigger className="flex h-9 cursor-pointer items-center gap-2 text-sm md:h-12">
         <IconBorderRadius />
-      </SelectTrigger>
+      </SelectPrimitive.Trigger>
       <SelectContent>
         <SelectGroup>
           <SelectLabel>Radius</SelectLabel>
