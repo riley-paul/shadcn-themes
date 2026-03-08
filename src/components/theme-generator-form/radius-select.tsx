@@ -32,14 +32,11 @@ export default function RadiusSelect() {
   }
 
   return (
-    <Select
-      value={value ?? "0.625rem"}
-      onValueChange={onValueChange}
-    >
+    <Select value={value ?? "0.625rem"} onValueChange={onValueChange}>
       <SelectPrimitive.Trigger className="flex h-9 cursor-pointer items-center gap-2 text-sm md:h-12">
         <IconBorderRadius />
       </SelectPrimitive.Trigger>
-      <SelectContent>
+      <SelectContent position="popper">
         <SelectGroup>
           <SelectLabel>Radius</SelectLabel>
           <SelectItem value="0">0</SelectItem>

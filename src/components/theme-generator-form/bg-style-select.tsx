@@ -31,7 +31,7 @@ export default function BgStyleSelect() {
       <SelectPrimitive.Trigger className="flex h-9 cursor-pointer items-center gap-2 text-sm md:h-12">
         <IconBackground />
       </SelectPrimitive.Trigger>
-      <SelectContent>
+      <SelectContent position="popper">
         {resolvedTheme === "light" ? (
           <SelectItem value="white">White</SelectItem>
         ) : (
